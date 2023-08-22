@@ -1,0 +1,39 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.2'
+	id 'io.spring.dependency-management' version '1.1.2'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// https://mvnrepository.com/artifact/org.json/json
+	implementation group: 'org.json', name: 'json', version: '20090211'
+
+	// https://mvnrepository.com/artifact/org.eclipse.mylyn.github/org.eclipse.egit.github.core
+	implementation group: 'org.eclipse.mylyn.github', name: 'org.eclipse.egit.github.core', version: '2.0.3'
+
+// https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit
+	implementation group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '6.3.0.202209071007-r'
+
+// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.12'
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
